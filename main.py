@@ -48,14 +48,7 @@ def sanitize_turkish(character):
 		character = character.replace("ğ","g")
 	return character
 
-def main():
-	import sys
-	if len(sys.argv)==1:
-		raise Exception("python3 main.py <word to nato-ize>")
-	arguments = sys.argv
-	
-	words = arguments.copy()
-	del words[0]
+def spell(words):
 	message = f"You inserted {" ".join(words)}. Its NATO spelling is:\n\n"
 	for word in words:
 		for char in word:
@@ -64,7 +57,17 @@ def main():
 			alphabet = NATO_ALPHABET[sanitize_turkish(char.lower())]
 			message += alphabet + "\n"
 		message += "\n"
+	return message
 
+def main():
+	import sys
+	if len(sys.argv)==1:
+		raise Exception("python3 main.py <word to nato-ize>")
+	arguments = sys.argv	
+	words = arguments.copy()
+	del words[0]
+	
+	message = spell(words)
 	print(message)
 
 main()
