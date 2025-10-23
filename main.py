@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 NATO_ALPHABET = {
 	"a":"Alpha",
 	"b":"Bravo",
