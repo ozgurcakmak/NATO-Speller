@@ -71,5 +71,5 @@ def main():
 	
 	message = spell(words)
 	print(message)
-
+# run main
 main()
